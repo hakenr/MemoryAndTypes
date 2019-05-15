@@ -50,6 +50,13 @@ namespace Haken.CallingMethods
 			Debugger.Break();
 			/****************************************************************************************************/
 
+			referenceTypeParameter = new MyClass();
+			referenceTypeParameter.ValueProperty = 2222;
+
+			/****************************************************************************************************/
+			Debugger.Break();
+			/****************************************************************************************************/
+
 			return valueTypeParameter;
 		}
 
@@ -61,6 +68,13 @@ namespace Haken.CallingMethods
 
 			valueTypeParameter++;
 			referenceTypeParameter.ValueProperty++;
+
+			/****************************************************************************************************/
+			Debugger.Break();
+			/****************************************************************************************************/
+
+			referenceTypeParameter = new MyClass();
+			referenceTypeParameter.ValueProperty = 2222;
 
 			/****************************************************************************************************/
 			Debugger.Break();
