@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Haken.CallingMethods
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			// inicializace
 			int valueTypeVariable1 = 0xAAAA;
@@ -18,67 +18,49 @@ namespace Haken.CallingMethods
 			referenceTypeVariable1.ValueProperty = 1111;
 			referenceTypeVariable1.ReferenceProperty = null;
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 
 			// předání parametrů "hodnotou" (ByVal)
 			MyMethod(valueTypeVariable1, referenceTypeVariable1);
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 
 			// předání parametrů "odkazem" (ByRef)
 			MyMethodWithByRefParameters(ref valueTypeVariable1, ref referenceTypeVariable1);
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 		}
 
 		private static int MyMethod(int valueTypeParameter, MyClass referenceTypeParameter)
 		{
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 			
 			valueTypeParameter++;
 			referenceTypeParameter.ValueProperty++;
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 
 			referenceTypeParameter = new MyClass();
 			referenceTypeParameter.ValueProperty = 2222;
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 
 			return valueTypeParameter;
 		}
 
 		private static void MyMethodWithByRefParameters(ref int valueTypeParameter, ref MyClass referenceTypeParameter)
 		{
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 
 			valueTypeParameter++;
 			referenceTypeParameter.ValueProperty++;
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 
 			referenceTypeParameter = new MyClass();
 			referenceTypeParameter.ValueProperty = 2222;
 
-			/****************************************************************************************************/
 			Debugger.Break();
-			/****************************************************************************************************/
 		}
 	}
 
